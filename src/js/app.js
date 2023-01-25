@@ -52,11 +52,11 @@ function generateUI(arr) {
     let html = "";
     arr.forEach((todo) => {
         html += `<div class="todo-box">
-              <div class="todo-format p-4 todo-format-main" id="todo-format">
+              <div class="todo-format p-3 todo-format-main" id="todo-format">
               <div
               class="title d-flex justify-content-between align-items-center"
               >
-              <h4 class="result-title">${todo.title}</h4>
+              <h5 class="result-title fw-bold">${todo.title}</h5>
               <i class="bi bi-three-dots fs-4" onclick="clickDots()"></i>
               </div>
               <p class="py-3 result-description">${todo.description}</p>

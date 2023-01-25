@@ -30,6 +30,7 @@ body {
 
 .content {
     height: 90%;
+    border-color: var(--dark-grey-clr);
     border-radius: 20px !important;
 }
 
@@ -55,7 +56,7 @@ body {
 
 .todo-format {
     background-color: var(--light-gold-clr);
-    width: 400px;
+    width: 350px;
     height: 180px;
 }
 
@@ -114,7 +115,6 @@ body {
 
 .main-article  {
     width: 80%;
-    border: 1px solid #ccc;
 }
 
 .todo-main-title {
