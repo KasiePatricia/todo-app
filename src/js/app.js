@@ -80,7 +80,7 @@ function generateUI(arr) {
               </div>
           </div>
           <div class="edit rounded p-2">
-              <p class="pe-1 cursor" id="editTodo">Edit...</p>
+              <p class="pe-1 cursor" id="editTodo" onclick="updateTodo(${todo.id})">Edit...</p>
               <p class="border-top pt-1 cursor" id="deleteTodo" onclick="deleteTodo(${todo.id})" role="button">Delete</p>
 
           </div>
@@ -123,7 +123,7 @@ const todoModal = document.getElementById("todo-modal");
 todoModal.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if(inputTitle !== "" && inputDescription !== "") {
+  if(inputTitle.value !== "" && inputDescription.value !== "") {
     let currentTodo = {
       title: inputTitle.value,
       description: inputDescription.value,
@@ -134,9 +134,12 @@ todoModal.addEventListener("submit", (e) => {
     todos.push(currentTodo);
     closeModal();
       generateUI(todos);
-  }
 
+      inputTitle.value = "";
+  inputDescription.value = "";
+  }
   
+
 });
 
 //Delete TODO
@@ -146,10 +149,34 @@ function deleteTodo(id) {
   generateUI(todos);
 }
 
+// Update TODO
+let title = document.querySelector('.result-title');
+let desc = document.querySelector('.result-description');
+let updateBtn = document.querySelector('#updatebtn');
+let currentId;
+function updateTodo(id) {
+  openModal();
+  let currentTodo = todos.find(todo => todo.id === id);
+  inputTitle.value = currentTodo.title;
+  inputDescription.value = currentTodo.description;
+  currentId = id;
+}
+
+updateBtn.addEventListener("click", function() {
+  let currentTodo = todos.find(todo => todo.id === currentId);
+  currentTodo.title = inputTitle.value;
+  currentTodo.description = inputDescription.value;
+  generateUI(todos);
+  closeModal();
+  inputTitle.value = "";
+  inputDescription.value = "";
+});
+
 //Done tasks
 
 document.getElementById("done").addEventListener("click", function () {
   console.log("first")
-  resultTitle.style.textDecoration = "line-through";
-  resultDescription.style.textDecoration = "line-through";
+  title.style.textDecoration = "line-through";
+  desc.style.textDecoration = "line-through";
+  // console.log("hello")
 });

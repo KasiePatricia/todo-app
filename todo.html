@@ -92,52 +92,59 @@
     </section>
 
     <section class="main-modal d-flex justify-content-center align-items-center flex-column">
-      <form class="modal-content hidden d-flex gap-10 flex-column" id="todo-modal">
-        <div class="d-flex justify-content-between align-items-center">
-          <a class="btn-closed btn" id="btn-closed">Cancel</a>
-          <button type="submit" class="btn btn-dark" id="addbtn">Add</button>
-        </div>
-        <div>
-          <label for="title" class="d-block">Title</label>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            placeholder="add a title ..."
-          />
-        </div>
-        <div>
-          <label for="description" class="d-block">Description</label>
-          <textarea
-            name="description"
-            id="description"
-            cols="30"
-            rows="10"
-            placeholder="add a description ..."
-          ></textarea>
-        </div>
-        <div class="tag-content">
-          <h5>Tags</h5>
-          <div class="activities d-flex gap-10">
-            <div class="d-flex gap-1 mb-3 align-items-center p-1">
-              <div class="purple color-size"></div>
-              <p class="mb-0">work</p>
-            </div>
-            <div class="d-flex gap-1 mb-3 align-items-center p-1">
-              <div class="blue color-size"></div>
-              <p class="mb-0">study</p>
-            </div>
-            <div class="d-flex gap-1 mb-3 align-items-center p-1">
-              <div class="pink color-size"></div>
-              <p class="mb-0">entertainment</p>
-            </div>
-            <div class="d-flex gap-1 mb-3 align-items-center p-1">
-              <div class="green color-size"></div>
-              <p class="mb-0">family</p>
+      
+      <div class="modal-content hidden d-flex gap-10 flex-column">
+        <form action="" id="todo-modal">
+          <div class="d-flex justify-content-between align-items-center">
+            <a class="btn-closed btn" id="btn-closed">Cancel</a>
+              <button type="submit" class="btn btn-dark" id="addbtn">Add</button>
+          </div>
+          <div>
+            <label for="title" class="d-block">Title</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="add a title ..."
+            />
+          </div>
+          <div>
+            <label for="description" class="d-block">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+              placeholder="add a description ..."
+            ></textarea>
+          </div>
+          <div class="tag-content">
+            <h5>Tags</h5>
+            <div class="activities d-flex gap-10">
+              <div class="d-flex gap-1 mb-3 align-items-center p-1">
+                <div class="purple color-size"></div>
+                <p class="mb-0">work</p>
+              </div>
+              <div class="d-flex gap-1 mb-3 align-items-center p-1">
+                <div class="blue color-size"></div>
+                <p class="mb-0">study</p>
+              </div>
+              <div class="d-flex gap-1 mb-3 align-items-center p-1">
+                <div class="pink color-size"></div>
+                <p class="mb-0">entertainment</p>
+              </div>
+              <div class="d-flex gap-1 mb-3 align-items-center p-1">
+                <div class="green color-size"></div>
+                <p class="mb-0">family</p>
+              </div>
             </div>
           </div>
+        </form>
+        <div class="d-flex">
+
+          <button class="btn btn-dark me-2" id="updatebtn">Update</button>
         </div>
-    </form>
+      </div>
 
       <div class="overlay hidden"></div>
     </section>
