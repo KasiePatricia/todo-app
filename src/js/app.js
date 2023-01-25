@@ -74,9 +74,9 @@ function generateUI(arr) {
                   <div class="purple"></div>
               </div>
               <div class="checkbox-label">
-                  <input type="checkbox" name="done" id="done" />
-                  <label for="done">Done</label>
-              </div>
+                  <input type="checkbox" name="done" class="done" id="done-${todo.id}"/>
+                  <label for="done" for="done-${todo.id}">Done</label>
+                </div>
               </div>
           </div>
           <div class="edit rounded p-2">
@@ -154,6 +154,7 @@ let title = document.querySelector('.result-title');
 let desc = document.querySelector('.result-description');
 let updateBtn = document.querySelector('#updatebtn');
 let currentId;
+
 function updateTodo(id) {
   openModal();
   let currentTodo = todos.find(todo => todo.id === id);
@@ -174,9 +175,27 @@ updateBtn.addEventListener("click", function() {
 
 //Done tasks
 
-document.getElementById("done").addEventListener("click", function () {
-  console.log("first")
-  title.style.textDecoration = "line-through";
-  desc.style.textDecoration = "line-through";
-  // console.log("hello")
+// document.getElementById("done").addEventListener("click", function () {
+//   console.log("first")
+//   title.style.textDecoration = "line-through";
+//   desc.style.textDecoration = "line-through";
+//   // console.log("hello")
+// });
+
+const checkboxes = document.querySelectorAll(".done");
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    let todoId = Number(this.getAttribute("id").split("-")[1])
+    let currentTodo = todos.find((todo) => todo.id === todoId);
+    currentTodo.isComplete = this.checked;
+    let todoTitle = this.closest('.todo-box').querySelector('.result-title');
+    let todoDescription = this.closest('.todo-box').querySelector('.result-description');
+    if (this.checked) {
+      todoTitle.style.textDecoration = "line-through";
+      todoDescription.style.textDecoration = "line-through";
+    } else {
+      todoTitle.style.textDecoration = "none";
+      todoDescription.style.textDecoration = "none";
+   }
+  });
 });
