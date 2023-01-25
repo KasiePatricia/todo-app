@@ -247,7 +247,32 @@ body {
     .main-container {
         /* flex-basis: 100% !important; */
         display: block !important;
-        width: 90%;
+        width: 95%;
         margin: 30px auto 0;
+    }
+    .para {
+        width: 100% !important;
+    }
+    .main-page-content {
+        padding: 10px !important;
+    }
+    .todo-format {
+        width: 300px;
+    }
+    .modal-content {
+        width: 300px;
+    }
+    .activities {
+        gap: 0;
+    }
+    .activities > div {
+        margin-bottom: 0 !important;
+    }
+    
+  }
+
+  @media (max-width: 325px) {
+    .todo-format {
+        width: 200px;
     }
   }
