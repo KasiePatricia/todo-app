@@ -37,9 +37,14 @@ function clickDots() {
                   } else {
                     edits[index].style.display = "block";
                   }
+                  console.log("first")
         })
+        
     });
+    
 }
+
+
 
 
 let todos = [
@@ -95,7 +100,6 @@ todoModal.addEventListener("submit", (e) =>{
     e.preventDefault();
 
     let currentTodo = {title: inputTitle.value, description: inputDescription.value, id: Date.now(), isComplete: false};
-    
     todos.push(currentTodo);
     closeModal();
     generateUI(todos)

@@ -115,6 +115,7 @@ body {
 
 .main-article  {
     width: 80%;
+    min-width: 70vw;
 }
 
 .todo-main-title {
