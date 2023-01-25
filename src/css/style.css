@@ -229,6 +229,7 @@ body {
     }
     .activities {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row !important;
     }
     .todo-format {
