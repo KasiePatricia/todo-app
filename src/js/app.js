@@ -93,57 +93,17 @@ const todoModal = document.getElementById("todo-modal");
 
 todoModal.addEventListener("submit", (e) =>{
     e.preventDefault();
-    console.log(inputTitle.value)
 
     let currentTodo = {title: inputTitle.value, description: inputDescription.value, id: Date.now(), isComplete: false};
-    console.log(todos)
+    
     todos.push(currentTodo);
     closeModal();
     generateUI(todos)
-    console.log(todos)
+  
 });
-//add item to the todolist
-//   const addTodo = () =>{
-// add the item
-//     const title = inputTitle.value;
-//     const description = inputDescription.value;
-//     todo.push({item : itemInput, id: Math.floor(Math.random() * 15), isComplete: false});
 
-//     return todo;
-//   }
-// let mainArticle2 = [];
+//Delete TODO
 
-// addbtn.addEventListener("submit", (e) => {
-//   e.preventDefault();
-
-//   if (inputTitle.value != "" && inputDescription.value != "") {
-    //create list
-
-    // resultTitle.innerText = inputTitle.value;
-    // resultDescription.innerText = inputDescription.value;
-    //   closeModal();
-
-//     mainArticle2.push({
-//       item: resultTitle,
-//       id: Math.floor(Math.random() * 15),
-//       isComplete: false,
-//     });
-
-//     return mainArticle2;
-//   }
-
-  //   const close = document.querySelectorAll('span');
-  //   for(let i=0; i<close.length; i++){
-  //       close[i].addEventListener('click', () => {
-  //           close[i].parentElement.style.opacity = "0";
-  //           setTimeout(() => {
-  //               close[i].parentElement.style.display = "none";
-  //               close[i].parentElement.remove();
-  //           }, 500);
-  //       })
-  //   }
-  //   inputText.value = "";
-// });
 
 //delete todo
 // const deleteTodo = document.getElementById("deleteTodo");
