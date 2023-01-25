@@ -232,7 +232,10 @@ body {
         flex-wrap: wrap;
         flex-direction: row !important;
     }
-    .todo-format {
-        margin-top: 20px;
+    .checkbox-label {
+        margin-bottom: 20px;
+    }
+    .main-article {
+        width: 100%;
     }
   }
