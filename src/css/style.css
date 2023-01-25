@@ -240,4 +240,14 @@ body {
         height: 350px !important;
         overflow: scroll;
     }
+    
+  }
+
+  @media (max-width: 426px) {
+    .main-container {
+        /* flex-basis: 100% !important; */
+        display: block !important;
+        width: 90%;
+        margin: 30px auto 0;
+    }
   }
