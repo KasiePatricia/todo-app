@@ -271,7 +271,12 @@ body {
     
   }
 
-  @media (max-width: 325px) {
+  @media (max-width: 376px) {
+    .todo-format {
+        width: 250px;
+    }
+  }
+  @media (max-width: 333px) {
     .todo-format {
         width: 200px;
     }
