@@ -57,7 +57,7 @@ body {
 .todo-format {
     background-color: var(--light-gold-clr);
     width: 350px;
-    height: 180px;
+    /* height: 180px; */
 }
 
 .pink {
@@ -116,6 +116,8 @@ body {
 .main-article  {
     width: 80%;
     min-width: 70vw;
+    height: 500px !important;
+    overflow: scroll;
 }
 
 .todo-main-title {
@@ -139,12 +141,12 @@ body {
 }
 .edit {
     display: none;
-    width: 15%;
+    width: 30%;
     background-color: var(--white-clr);
     box-shadow: 0 0 2px #5c5c5c;
     position: absolute;
-    top: 12%;
-    right: 60%;
+    top: 10%;
+    right: 5%;
 }
 
 .main-modal {
@@ -187,10 +189,11 @@ body {
   }
   
   .btn-closed {
-    /* transform: translate(10px, -20px); */
     padding: 0.5rem 0.7rem;
-    /* background: #eee; */
+    background: #eee;
     border-radius: 10px;
+    color: #000 !important;
+    text-decoration: none;
   }
 
   .overlay {

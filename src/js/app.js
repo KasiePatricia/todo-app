@@ -28,41 +28,42 @@ const mainArticle = document.getElementById("main-article");
 
 const edits = document.querySelectorAll(".edit");
 const dots = document.querySelectorAll(".bi-three-dots");
-function clickDots() {
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", (e) => {
-            // e.target
-            if (edits[index].style.display === "block") {
-                    edits[index].style.display = "none";
-                  } else {
-                    edits[index].style.display = "block";
-                  }
-                  console.log("first")
-        })
-        
-    });
-    
-}
 
-
-
+// function clickDots() {
+//   dots.forEach((dot, index) => {
+//     dot.addEventListener("click", (e) => {
+//       // e.target
+//       if (edits[index].style.display === "block") {
+//         edits[index].style.display = "none";
+//       } else {
+//         edits[index].style.display = "block";
+//       }
+//       console.log("first");
+//     });
+//   });
+// }
 
 let todos = [
-  { title: "Sweep the house ", description: "Going to school", id: 3, isComplete: false },
-  { title: "books", description: "buying books",  id: 9, isComplete: false },
-  { title: "calls ", description: "call Ogo",  id: 2, isComplete: false },
+  {
+    title: "Sweep the house ",
+    description: "Going to school",
+    id: 3,
+    isComplete: false,
+  },
+  { title: "books", description: "buying books", id: 9, isComplete: false },
+  { title: "calls ", description: "call Ogo", id: 2, isComplete: false },
 ];
 
 function generateUI(arr) {
-    let html = "";
-    arr.forEach((todo) => {
-        html += `<div class="todo-box">
+  let html = "";
+  arr.forEach((todo) => {
+    html += `<div class="todo-box">
               <div class="todo-format p-3 todo-format-main" id="todo-format">
               <div
               class="title d-flex justify-content-between align-items-center"
               >
               <h5 class="result-title fw-bold">${todo.title}</h5>
-              <i class="bi bi-three-dots fs-4" onclick="clickDots()"></i>
+              <i class="bi bi-three-dots fs-4" role="button"></i>
               </div>
               <p class="py-3 result-description">${todo.description}</p>
               <div
@@ -80,52 +81,75 @@ function generateUI(arr) {
           </div>
           <div class="edit rounded p-2">
               <p class="pe-1 cursor" id="editTodo">Edit...</p>
-              <p class="border-top pt-1 cursor" id="deleteTodo">Delete</p>
+              <p class="border-top pt-1 cursor" id="deleteTodo" onclick="deleteTodo(${todo.id})" role="button">Delete</p>
+
           </div>
         </div>
           `;
-      });
+  });
 
-      mainArticle.innerHTML = html;
+  mainArticle.innerHTML = html;
+
+  const dots = document.querySelectorAll(".bi-three-dots");
+  const cards = document.querySelectorAll(".todo-box");
+  dots.forEach((dot, index) => {
+    let card = cards[index],
+      edit = card.querySelector(".edit");
+    dot.addEventListener("click", (e) => {
+      edit.style.display = edit.style.display === "block" ? "none" : "block";
+      e.preventDefault();
+    });
+  });
 }
 
-generateUI(todos)
+generateUI(todos);
 
-
+document.addEventListener("click", function (event) {
+  const cards = document.querySelectorAll(".todo-box");
+  cards.forEach((card) => {
+    let edit = card.querySelector(".edit");
+    if (edit) {
+      let dot = card.querySelector(".bi-three-dots");
+      if (!dot.contains(event.target)) {
+        edit.style.display = "none";
+      }
+    }
+  });
+});
 
 // Create TODO
 const todoModal = document.getElementById("todo-modal");
 
-todoModal.addEventListener("submit", (e) =>{
-    e.preventDefault();
+todoModal.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    let currentTodo = {title: inputTitle.value, description: inputDescription.value, id: Date.now(), isComplete: false};
+  if(inputTitle !== "" && inputDescription !== "") {
+    let currentTodo = {
+      title: inputTitle.value,
+      description: inputDescription.value,
+      id: Date.now(),
+      isComplete: false,
+    };
+  
     todos.push(currentTodo);
     closeModal();
-    generateUI(todos)
+      generateUI(todos);
+  }
+
   
 });
 
 //Delete TODO
-
-
-//delete todo
-// const deleteTodo = document.getElementById("deleteTodo");
-// const todoFormat = document.getElementById("todo-format");
-
-// deleteTodo.addEventListener("click", (e) => {
-//   e.preventDefault();
-
-//   todoFormat.style.opacity = "0";
-//   setTimeout(() => {
-//     todoFormat.style.display = "none";
-//     todoFormat.remove();
-//   }, 500);
-// });
+function deleteTodo(id) {
+  let remaining = todos.filter(todo => todo.id != id);
+  todos = remaining;
+  generateUI(todos);
+}
 
 //Done tasks
 
-// document.getElementById("done").addEventListener("click", function () {
-//   resultTitle.style.textDecoration = "line-through";
-//   resultDescription.style.textDecoration = "line-through";
-// });
+document.getElementById("done").addEventListener("click", function () {
+  console.log("first")
+  resultTitle.style.textDecoration = "line-through";
+  resultDescription.style.textDecoration = "line-through";
+});
