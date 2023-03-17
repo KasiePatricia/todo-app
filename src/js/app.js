@@ -57,8 +57,8 @@ function generateUI(arr) {
               class="todo-footer d-flex justify-content-between align-items-center"
               >
               <div class="d-flex" style="gap: 5px">
-                  <div class="pink"></div>
-                  <div class="purple"></div>
+                  <div class="pink h-w-br "></div>
+                  <div class="purple h-w-br "></div>
               </div>
               <div class="checkbox-label">
                   <input type="checkbox" name="done" class="done" id="done-${todo.id}"/>
