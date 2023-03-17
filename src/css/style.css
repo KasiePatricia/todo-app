@@ -1,283 +1,274 @@
 :root {
-    --dark-grey-clr:#69665C;
-    --light-grey-clr:#B2AFA1;
-    --light-gold-clr:#FFF9DE;
-    --white-clr:#FFFFFF;
-    --light-blue-clr:#D1E5F7;
-    --light-green-clr:#DAF2D6;
-    --pink-clr:#FFCECE;
-    --purple-clr:#D2CEFF;
+  --dark-grey-clr: #69665c;
+  --light-grey-clr: #b2afa1;
+  --light-gold-clr: #fff9de;
+  --white-clr: #ffffff;
+  --light-blue-clr: #d1e5f7;
+  --light-green-clr: #daf2d6;
+  --pink-clr: #ffcece;
+  --purple-clr: #d2ceff;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--dark-grey-clr);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--dark-grey-clr);
 }
 
 .container {
-    height: 100vh !important;
+  height: 100vh !important;
 }
 
 .cursor {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .content {
-    height: 90%;
-    border-color: var(--dark-grey-clr) !important;
-    border-radius: 20px !important;
+  /* height: 70%; */
+  width: 900px;
+  max-width: 90%;
+  margin: 0 auto;
+  border-color: var(--dark-grey-clr) !important;
+  border-radius: 20px !important;
 }
 
 .content h1 {
-    font-size: 50px;
+  font-size: 2.5rem;
 }
 
 .letter-t {
-    color: var(--light-blue-clr);
+  color: var(--light-blue-clr);
 }
 
 .letter-o {
-    color: var(--pink-clr);
+  color: var(--pink-clr);
 }
 
 .letter-d {
-    color: var(--light-green-clr);
+  color: var(--light-green-clr);
 }
 
 .letter-o2 {
-    color: var(--purple-clr);
+  color: var(--purple-clr);
 }
 
 .todo-format {
-    background-color: var(--light-gold-clr);
-    width: 350px;
-    /* height: 180px; */
+  background-color: var(--light-gold-clr);
 }
 
 .pink {
-    background-color: var(--pink-clr);
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  background-color: var(--pink-clr);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 .purple {
-    background-color: var(--purple-clr);
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  background-color: var(--purple-clr);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 .blue {
-    background-color: var(--light-blue-clr);
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  background-color: var(--light-blue-clr);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 .green {
-    background-color: var(--light-green-clr);
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  background-color: var(--light-green-clr);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 .tag-content .color-size {
-    height: 17px;
-    width: 17px;
+  height: 17px;
+  width: 17px;
 }
 
 .gap-1 {
-    gap: 10px;
+  gap: 10px;
 }
 
 .gap-10 {
-    gap: 20px;
+  gap: 20px;
 }
 
 .img-size {
-    width: 200px;
-    height: 100px;
-    /* margin-bottom: -130px; */
+  width: 150px;
 }
 
 .img-todo {
-    margin-left: -20px;
-    width: 200px;
-    height: 200px;
+  width: 120px;
 }
 
-.main-article  {
-    width: 80%;
-    min-width: 70vw;
-    height: 500px !important;
-    overflow: scroll;
+.main-article {
+  width: 80%;
+  /* min-width: 70vw; */
+  height: 500px !important;
+  overflow: scroll;
 }
 
-.todo-main-title {
-    margin-bottom: 20px;
-}
-
-.todo-main-title a{
-    color: var(--dark-grey-clr);
+.todo-main-title a {
+  color: var(--dark-grey-clr);
 }
 .activities > div {
-    cursor: pointer;
+  cursor: pointer;
 }
-.activities > div:active, .activities > div:hover {
-    background-color: #f7f7ff;
-    border-radius: 10px;
-
+.activities > div:active,
+.activities > div:hover {
+  background-color: #f7f7ff;
+  border-radius: 10px;
 }
 
 .bi-three-dots {
-    cursor: pointer;
+  cursor: pointer;
 }
 .edit {
-    display: none;
-    width: 30%;
-    background-color: var(--white-clr);
-    box-shadow: 0 0 2px #5c5c5c;
-    position: absolute;
-    top: 10%;
-    right: 5%;
+  display: none;
+  width: 30%;
+  background-color: var(--white-clr);
+  box-shadow: 0 0 2px #5c5c5c;
+  position: absolute;
+  top: 10%;
+  right: 5%;
 }
 
 .main-modal {
-        color: #222;
-        /* min-height: 100vh; */
+  color: #222;
+  /* min-height: 100vh; */
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.1rem;
+  width: 550px;
+  padding: 1.3rem;
+  min-height: 250px;
+  position: absolute;
+  top: 20%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.modal-content input,
+textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.modal-content p {
+  font-size: 0.7rem;
+  color: #777;
+}
+
+.modal-content button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-closed {
+  padding: 0.5rem 0.7rem;
+  background: #eee;
+  border-radius: 10px;
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.modal-content {
+  z-index: 2;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.todo-box {
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  .todo-main-container {
+    flex-wrap: wrap;
+  }
+  .img-todo {
+    display: none;
+  }
+  .activities {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.1rem;
-    width: 550px;
-    padding: 1.3rem;
-    min-height: 250px;
-    position: absolute;
-    top: 20%;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 15px;
+    flex-wrap: wrap;
+    flex-direction: row !important;
   }
-  
-  .modal-content input, textarea{
+  .checkbox-label {
+    margin-bottom: 20px;
+  }
+  .main-article {
     width: 100%;
-    padding: 0.7rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 0.9em;
+    height: 350px !important;
+    overflow: scroll;
   }
-  
-  .modal-content p {
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-  .modal-content button {
-    cursor: pointer;
-    border: none;
-    font-weight: 600;
-  }
-  
-  .btn-closed {
-    padding: 0.5rem 0.7rem;
-    background: #eee;
-    border-radius: 10px;
-    color: #000 !important;
-    text-decoration: none;
-  }
+}
 
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-    z-index: 1;
+@media (max-width: 426px) {
+  .main-container {
+    display: block !important;
+    width: 95%;
+    margin: 30px auto 0;
   }
-
+  .para {
+    width: 100% !important;
+  }
+  .main-page-content {
+    padding: 10px !important;
+  }
+  .todo-format {
+    width: 300px;
+  }
   .modal-content {
-    z-index: 2;
+    width: 300px;
   }
-  .hidden {
-    visibility: hidden;
+  .activities {
+    gap: 0;
   }
+  .activities > div {
+    margin-bottom: 0 !important;
+  }
+}
 
-  .todo-box {
-    position: relative;
+@media (max-width: 376px) {
+  .todo-format {
+    width: 250px;
   }
-
-  @media (max-width:800px) {
-    .todo-main-container {
-        flex-wrap: wrap;
-    }
-    .img-todo {
-        display: none;
-    }
-    .activities {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row !important;
-    }
-    .checkbox-label {
-        margin-bottom: 20px;
-    }
-    .main-article {
-        width: 100%;
-        height: 350px !important;
-        overflow: scroll;
-    }
-    
+}
+@media (max-width: 333px) {
+  .todo-format {
+    width: 200px;
   }
-
-  @media (max-width: 426px) {
-    .main-container {
-        /* flex-basis: 100% !important; */
-        display: block !important;
-        width: 95%;
-        margin: 30px auto 0;
-    }
-    .para {
-        width: 100% !important;
-    }
-    .main-page-content {
-        padding: 10px !important;
-    }
-    .todo-format {
-        width: 300px;
-    }
-    .modal-content {
-        width: 300px;
-    }
-    .activities {
-        gap: 0;
-    }
-    .activities > div {
-        margin-bottom: 0 !important;
-    }
-    
-  }
-
-  @media (max-width: 376px) {
-    .todo-format {
-        width: 250px;
-    }
-  }
-  @media (max-width: 333px) {
-    .todo-format {
-        width: 200px;
-    }
-  }
+}
