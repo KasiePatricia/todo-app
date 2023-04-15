@@ -39,10 +39,6 @@ window.onload = todosJson;
 function generateUI(arr) {
   let html = "";
 
-  // // check if localStorage has any tasks
-  // // if not then return
-  // if (localStorage.getItem("todos") == null) return;
-
   arr.forEach((todo) => {
     html += `<div class="todo-box">
               <div class="todo-format p-3 todo-format-main" id="todo-format">
